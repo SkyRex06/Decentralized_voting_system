@@ -28,8 +28,6 @@ This decentralized voting system aims to provide a transparent and secure platfo
 -   **Decentralized:** The voting process is managed by a smart contract on the Ethereum blockchain (or a compatible network).
 
 ## Project Structure
-## Getting Started
-
 ### Prerequisites
 
 -   Node.js (LTS version recommended)
