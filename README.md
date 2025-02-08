@@ -1,48 +1,101 @@
+# Decentralized Voting System
 
-# Election - DAPP Tutorial
-Build your first decentralized application, or Dapp, on the Ethereum Network with this tutorial!
+This project implements a decentralized voting system using Solidity smart contracts, a JavaScript frontend, and Web3.js for blockchain interaction.  It's designed as a prototype for a FOSS hackathon.
 
-Full Free Video Tutorial:**
-https://youtu.be/3681ZYbDSSk
+## Table of Contents
 
-## 2019 Updated Code
-https://github.com/dappuniversity/election/tree/2019_update
+-   [Introduction](#introduction)
+-   [Features](#features)
+-   [Project Structure](#project-structure)
+-   [Getting Started](#getting-started)
+    -   [Prerequisites](#prerequisites)
+    -   [Installation](#installation)
+    -   [Running the Application](#running-the-application)
+-   [Usage](#usage)
+-   [Technologies Used](#technologies-used)
+-   [Contributing](#contributing)
+-   [License](#license)
 
-Follow the steps below to download, install, and run this project.
+## Introduction
 
-## Dependencies
-Install these prerequisites to follow along with the tutorial. See free video tutorial or a full explanation of each prerequisite.
-- NPM: https://nodejs.org
-- Truffle: https://github.com/trufflesuite/truffle
-- Ganache: http://truffleframework.com/ganache/
-- Metamask: https://metamask.io/
+This decentralized voting system aims to provide a transparent and secure platform for casting votes. By leveraging blockchain technology, it ensures that votes are immutable and tamper-proof. This prototype focuses on core voting functionality and serves as a foundation for future enhancements.
 
+## Features
 
-## Step 1. Clone the project
-`git clone https://github.com/dappuniversity/election`
+-   **Candidate Registration (Hardcoded for MVP):** Initial candidates are defined within the smart contract's constructor for simplicity in this prototype.
+-   **Secure Voting:** Voters can cast their vote for a single candidate. Double voting is prevented.
+-   **Transparent Vote Counting:** Vote counts for each candidate can be retrieved and viewed.
+-   **Decentralized:** The voting process is managed by a smart contract on the Ethereum blockchain (or a compatible network).
 
-## Step 2. Install dependencies
-```
-$ cd election
-$ npm install
-```
-## Step 3. Start Ganache
-Open the Ganache GUI client that you downloaded and installed. This will start your local blockchain instance. See free video tutorial for full explanation.
+## Project Structure
+### Prerequisites
 
+-   Node.js (LTS version recommended)
+-   npm (Node Package Manager, comes with Node.js)
+-   Truffle (`npm install -g truffle`)
+-   Ganache (Ganache UI recommended; `npm install -g ganache`)
+-   MetaMask (Browser extension for interacting with Ethereum)
 
-## Step 4. Compile & Deploy Election Smart Contract
-`$ truffle migrate --reset`
-You must migrate the election smart contract each time your restart ganache.
+### Installation
 
-## Step 5. Configure Metamask
-See free video tutorial for full explanation of these steps:
-- Unlock Metamask
-- Connect metamask to your local Etherum blockchain provided by Ganache.
-- Import an account provided by ganache.
+1.  Clone the repository:
 
-## Step 6. Run the Front End Application
-`$ npm run dev`
-Visit this URL in your browser: http://localhost:3000
+    ```bash
+    git clone [repository URL]
+    cd decentralized-voting-system
+    ```
 
-If you get stuck, please reference the free video tutorial.
+2.  Install dependencies:
 
+    ```bash
+    npm install
+    ```
+
+### Running the Application
+
+1.  Start Ganache (Ganache UI is recommended).
+
+2.  Compile the smart contract:
+
+    ```bash
+    truffle compile
+    ```
+
+3.  Deploy the contract to Ganache:
+
+    ```bash
+    truffle migrate
+    ```
+
+4.  Copy the contract address and ABI from the deployment output.  You'll find the ABI in `build/contracts/Voting.json`.
+
+5.  In the `frontend/script.js` file, replace `YOUR_CONTRACT_ADDRESS` and `YOUR_CONTRACT_ABI` placeholders with your actual contract address and ABI.
+
+6.  Open `frontend/index.html` in your browser.
+
+7.  Connect MetaMask to your Ganache network.
+
+## Usage
+
+1.  Open the `index.html` file in your browser.
+2.  Connect MetaMask to your Ganache network and select an account.
+3.  The candidate names should be displayed.
+4.  Implement candidate selection in your frontend (e.g., radio buttons, dropdown).
+5.  Click the "Vote" button to cast your vote.  MetaMask will prompt you to confirm the transaction.
+
+## Technologies Used
+
+-   **Solidity:** Smart contract programming language.
+-   **JavaScript:** Frontend logic and interaction with the smart contract.
+-   **Web3.js:** JavaScript library for interacting with the Ethereum blockchain.
+-   **Truffle:** Development framework for Ethereum dApps.
+-   **Ganache:** Local Ethereum blockchain for development.
+-   **MetaMask:** Browser extension for managing Ethereum accounts and signing transactions.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+
+[Choose a license - e.g., MIT]
